@@ -126,6 +126,30 @@ void CountingSort(T array[], uint64_t n) {
         }
 }
 
+// Cocktail shaker sort
+
+template<typename T>
+void CocktailShakerSort(T array[], uint64_t n) {
+        bool swapped = true;
+        while(swapped) {
+                swapped = false;
+                for(uint64_t i=0;i<n-2;i++) {
+                        if(array[i]>array[i+1]) {
+                                swapped = true;
+                                std::swap(array[i], array[i+1]);
+                        }
+                }
+                if(!swapped) break;
+                for(uint64_t i=n-2;i>0;i--) {
+                        if(array[i]>array[i+1]) {
+                                swapped = true;
+                                std::swap(array[i], array[i+1]);
+                        }
+                }
+        }
+        return;
+}
+
 // Heap sort
 
 template<typename T>
@@ -183,14 +207,6 @@ void Helper(T array[],uint64_t s, uint64_t n, uint32_t depth) {
 }
 
 // DualSort
-/*
-template<typename T>
-inline void swap(T &a,T &b) {
-	auto c = a;
-	a = b;
-	b = c;
-}
-*/
 
 template<typename T>
 void DualSort(T array[], uint64_t n) {

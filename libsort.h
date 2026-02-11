@@ -1,5 +1,6 @@
 #pragma once
 #include <cstdint>
+#include <cmath>
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -26,6 +27,9 @@ void ShellSort(T array[], uint64_t n);
 
 template<typename T>
 void CountingSort(T array[], uint64_t n);
+
+template<typename T>
+void CocktailShakerSort(T array[], uint64_t n);
 
 template<typename T>
 void HeapSort(T array[], uint64_t n);
